@@ -1,0 +1,11 @@
+/.idea/*
+.idea/
+/node-modules/*
+node-modules/
+node_modules
+log/*
+log/pm2/*
+log/cron/*
+log/scripts/*
+package-lock.json
+

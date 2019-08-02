@@ -1,0 +1,45 @@
+version: '2'
+services:
+    pg_microtrustee:
+        image: postgres
+        container_name: pg_microtrustee
+        restart: always
+        environment:
+            PGDATA: '/var/lib/postgresql/data/pgdata'
+            POSTGRES_USER: blocksoft_microtrustee
+            POSTGRES_PASSWORD: mainPassWillBeHere
+        ports:
+            - '4438:5432'
+        volumes:
+            - './../pgmicrotrustee:/var/lib/postgresql/data/pgdata'
+    pg_microtrustee_tests:
+        image: postgres
+        container_name: pg_microtrustee_tests
+        restart: always
+        environment:
+            PGDATA: '/var/lib/postgresql/data/pgdata'
+            POSTGRES_USER: blocksoft_microtrustee_tests
+            POSTGRES_PASSWORD: somePassWillBeHere
+        ports:
+            - '4439:5432'
+        volumes:
+            - './../pgmicrotrustee_tests:/var/lib/postgresql/data/pgdata'
+    microtrustee:
+        image: blocksoft/microtrustee
+        container_name: microtrustee
+        restart: always
+        volumes:
+            - ./logs/:/root/.pm2/logs/
+            - ./microtrustee/:/usr/microtrustee/
+        ports:
+            - '3003:3003'
+        environment:
+            LANG: C.UTF-8
+            NODE_TITLE: 'Microtrustee Prod'
+            MICROTRUSTEE_IS_PROD: 1
+            MICROTRUSTEE_IS_SCAN_CURRENCY_CODES : 1
+            PUBLIC_PG_HOST: pg_microtrustee
+            PUBLIC_PG_PORT: 5432
+            PUBLIC_PG_DATABASE: blocksoft_microtrustee
+            PUBLIC_PG_USER: blocksoft_microtrustee
+            PUBLIC_PG_PASSWORD: mainPassWillBeHere

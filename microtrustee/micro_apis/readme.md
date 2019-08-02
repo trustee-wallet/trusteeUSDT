@@ -1,0 +1,14 @@
+GET TRANSACTIONS BY ADDRESS:
+https://{YOUR_SERVER}/txs/:addr
+
+GET TRANSACTION BY TRANSACTION HASH:
+https://{YOUR_SERVER}/tx/:tx
+
+GET TRANSACTION OUTPUTS BY TRANSACTION HASH:
+https://{YOUR_SERVER}/tx/:tx/vout
+
+GET BLOCK BY BLOCK HASH:
+https://{YOUR_SERVER}/block/hash/:blockHash
+
+GET BLOCK BY BLOCK NUMBER:
+https://{YOUR_SERVER}/block/hash/:blockNumber

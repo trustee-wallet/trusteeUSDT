@@ -1,0 +1,4 @@
+--colors
+--require microtrustee/micro_configs/test_configs/setup.js
+--sort
+--timeout 150000

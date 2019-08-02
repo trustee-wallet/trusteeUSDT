@@ -1,0 +1,13 @@
+{
+  "name": "trusteemicroscanners",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "cron": "^1.7.0",
+    "node-cmd": "^3.0.0",
+    "pg": "^7.9.0",
+    "pg-format": "^1.0.4",
+    "request": "^2.88.0",
+    "sleep": "^6.0.0"
+  }
+}

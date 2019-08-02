@@ -1,0 +1,4 @@
+--colors
+--require /usr/microtrustee/micro_configs/test_configs/real.js
+--sort
+--timeout 150000

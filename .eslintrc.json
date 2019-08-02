@@ -1,0 +1,15 @@
+{
+    "extends": ["standard", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "env": {
+        "mocha": true,
+        "node": true
+    },
+    "plugins": ["sql"],
+    "rules": {
+        "no-unexpected-multiline": ["warn"],
+        "max-len": ["error", { "code": 650 }]
+    }
+}
